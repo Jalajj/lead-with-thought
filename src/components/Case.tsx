@@ -69,21 +69,22 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const slides = [
-  "../../public/slides/1.jpg",
-  "../../public/slides/2.jpg",
-  "../../public/slides/3.jpg",
-  "../../public/slides/4.jpg",
-  "../../public/slides/5.jpg",
-  "../../public/slides/6.jpg",
-  "../../public/slides/7.jpg",
-  "../../public/slides/8.jpg",
-  "../../public/slides/9.jpg",
-  "../../public/slides/10.jpg",
-  "../../public/slides/11.jpg",
-  "../../public/slides/12.jpg",
-  "../../public/slides/13.jpg",
-  "../../public/slides/14.jpg",
+  "/slides/1.jpg",
+  "/slides/2.jpg",
+  "/slides/3.jpg",
+  "/slides/4.jpg",
+  "/slides/5.jpg",
+  "/slides/6.jpg",
+  "/slides/7.jpg",
+  "/slides/8.jpg",
+  "/slides/9.jpg",
+  "/slides/10.jpg",
+  "/slides/11.jpg",
+  "/slides/12.jpg",
+  "/slides/13.jpg",
+  "/slides/14.jpg",
 ];
+
 
 export default function CaseStudyPDF() {
   return (
@@ -94,25 +95,24 @@ export default function CaseStudyPDF() {
       </h2>
 
       {/* Slider */}
-      <div className="w-[90vw] max-w-[720px] shadow-xl rounded-lg overflow-hidden">
-        <Swiper
-          modules={[Navigation, Keyboard]}
-          navigation
-          keyboard
-          slidesPerView={1}
-          spaceBetween={0}
-        >
-          {slides.map((src, i) => (
-            <SwiperSlide key={i}>
-              <img
-                src={src}
-                alt={`Slide ${i + 1}`}
-                className="w-full block"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      <div className="w-[90vw] max-w-[720px] h-[80vh]">
+  <Swiper
+    modules={[Navigation, Keyboard]}
+    navigation
+    keyboard
+    slidesPerView={1}
+  >
+    {slides.map((src, i) => (
+      <SwiperSlide key={i} className="flex items-center justify-center">
+        <img
+          src={src}
+          alt={`Slide ${i + 1}`}
+          className="max-h-full max-w-full object-contain"
+        />
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</div>
     </section>
   );
 }
